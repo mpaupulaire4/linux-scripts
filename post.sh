@@ -22,7 +22,7 @@ echo 'Config reflector'
 # mkdir -p /etc/xdg/reflector
 # yay -S reflector
 sudo cat $MCONF/reflector.conf > /etc/xdg/reflector/reflector.conf
-systemctl enable reflector.service
+sudo systemctl enable reflector.service
 
 echo 'Install NVM and Node'
 yay -S nvm
