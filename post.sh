@@ -3,34 +3,34 @@
 set -e
 source ./utils.sh
 
-# echo 'Updating'
-# sudo pacman -Syu
+echo 'Updating'
+sudo pacman -Syu
 
-# echo 'Install YAY'
-# sudo pacman -S --needed git base-devel --asdeps
-# git clone https://aur.archlinux.org/yay.git
-# cd yay
-# makepkg -si
-# cd ..
-# rm -rf yay
+echo 'Install YAY'
+sudo pacman -S --needed git base-devel --asdeps
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
 
-# yay
-# yay -Y --gendb
-# yay -S yay
+yay
+yay -Y --gendb
+yay -S yay
 
-# echo 'Config reflector'
-# mkdir -p /etc/xdg/reflector
-# yay -S reflector
-# sudo cp -i $MCONF/reflector.conf /etc/xdg/reflector/reflector.conf
-# sudo systemctl enable reflector.service
+echo 'Config reflector'
+mkdir -p /etc/xdg/reflector
+yay -S reflector
+sudo cp -i $MCONF/reflector.conf /etc/xdg/reflector/reflector.conf
+sudo systemctl enable reflector.service
 
-# echo 'Install NVM and Node'
-# yay -S nvm
-# echo 'source /usr/share/nvm/init-nvm.sh' >> $HOME/.zshrc
-# source $HOME/.zshrc
-# nvm install 'lts/*'
-# nvm install-latest-npm
-# npm install -g yarn
+echo 'Install NVM and Node'
+yay -S nvm
+echo 'source /usr/share/nvm/init-nvm.sh' >> $HOME/.zshrc
+source $HOME/.zshrc
+nvm install 'lts/*'
+nvm install-latest-npm
+npm install -g yarn
 
 
 echo 'Install LightDM'
