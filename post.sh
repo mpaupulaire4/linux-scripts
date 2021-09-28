@@ -1,27 +1,27 @@
 #!/bin/sh
 
-set -e
-source ./utils.sh
+# set -e
+# source ./utils.sh
 
-echo 'Updating'
-sudo pacman -Syu
+# echo 'Updating'
+# sudo pacman -Syu
 
-echo 'Install YAY'
-sudo pacman -S --needed git base-devel --asdeps
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+# echo 'Install YAY'
+# sudo pacman -S --needed git base-devel --asdeps
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
+# cd ..
+# rm -rf yay
 
-yay
-yay -Y --gendb
-yay -S yay
+# yay
+# yay -Y --gendb
+# yay -S yay
 
 echo 'Config reflector'
-yay -S reflector
-mkdir -p /etc/xdg/reflector
-cat $MCONF/reflector.conf > /etc/xdg/reflector/reflector.conf
+# mkdir -p /etc/xdg/reflector
+# yay -S reflector
+sudo cat $MCONF/reflector.conf > /etc/xdg/reflector/reflector.conf
 systemctl enable reflector.service
 
 echo 'Install NVM and Node'
