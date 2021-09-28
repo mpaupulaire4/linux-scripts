@@ -17,4 +17,4 @@
 - `intel-ucode` or `amd-ucode` for processor updates. Add `initrd=\cpu_manufacturer-ucode.img` before normal `initrd`
 - `git`
 
-##
+## Once installed you can run `post.sh` to get things setup
