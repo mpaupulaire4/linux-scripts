@@ -6,7 +6,7 @@ echo 'Updating'
 pacman -Syu
 
 echo 'Installing Some Basic Packages'
-pacman -S cryptsetup lvm2 efibootmgr zsh nano iwd git sudo xdg-user-dirs grml-zsh-config
+pacman -S cryptsetup lvm2 efibootmgr zsh nano iwd git sudo xdg-user-dirs grml-zsh-config --needed
 
 echo 'Create a password for the root user'
 passwd
