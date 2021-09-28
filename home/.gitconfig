@@ -1,0 +1,17 @@
+[user]
+	name = Michel Pupulaire
+	email = mpaupulaire4@gmail.com
+[core]
+	editor = code --wait
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main

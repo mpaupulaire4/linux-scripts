@@ -1,26 +1,5 @@
 #!/bin/bash
 
-echo '\n\nInstalling Fira Code\n\n'
-
-sudo apt install fonts-firacode
-
-
-echo '\n\nInstalling NVM and Node\n\n'
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-nvm install-latest-npm
-npm install -g yarn
-
-
-
-echo '\n\nInstalling ohmyzsh\n\n'
-
-sudo apt install zsh
-
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-
 echo '\n\nInstalling Brave Browser\n\n'
 
 sudo apt install apt-transport-https curl gnupg
@@ -48,8 +27,19 @@ git config --global pull.rebase true
 
 
 
-echo '\n\ Settting up QMK for Keyboard Config \n\n'
+# Notes
+## TODO
+- Figure out symlinking of home and config files
+- Bitwarden
+- VS Code
+- Kitty (Terminal)
+- Configure i3 (Window Manager)s
+- Rofi (run menu thing)
+- FIRA Code (font)
 
+## From Old Setup File
+### Setting up QMK
+```zsh
 sudo apt install -y git python3-pip.local/bin:$PATH
 
 python3 -m pip install --user qmk
@@ -60,11 +50,9 @@ qmk setup
 
 qmk config user.keyboard=crkbd
 qmk config user.keymap=mpaupulaire
-
-
-
-echo '\n\ Settting up Docker \n\n'
-
+```
+### Setting Up Docker
+```
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
@@ -77,9 +65,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker $USER
 newgrp docker
-
-
-# MANUAL INSTALL
-# Bitwarden
-# VS Code
-# Insomnia
+```
