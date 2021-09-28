@@ -18,7 +18,8 @@ yay -S yay
 
 echo 'Config reflector'
 yay -S reflector
-cat ./reflector.conf > /etc/xdg/reflector/reflector.conf
+mkdir -p /etc/xdg/reflector
+cat $MCONF/reflector.conf > /etc/xdg/reflector/reflector.conf
 systemctl enable reflector.service
 
 echo 'Sound (ALSA)'
@@ -34,8 +35,3 @@ sudo nano /etc/lightdm/lightdm-webkit2-greeter.conf
 
 echo 'Install i3'
 yay -S i3-gaps
-systemctl enable lightdm.service
-echo 'Change the greeter-session to the appropriate greeter'
-sudo nano /etc/lightdm/lightdm.conf
-echo 'Change the greeter-session to the appropriate greeter'
-sudo nano /etc/lightdm/lightdm-webkit2-greeter.conf

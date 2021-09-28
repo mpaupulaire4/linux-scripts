@@ -18,6 +18,7 @@ echo 'Set User mpaupulaire password'
 passwd mpaupulaire
 
 echo 'Setting Up Internet with IW'
+mkdir /etc/iwd
 cat $MCONF/iwd-main.conf > /etc/iwd/main.conf
 systemctl enable systemd-networkd.service
 systemctl enable systemd-resolved.service
