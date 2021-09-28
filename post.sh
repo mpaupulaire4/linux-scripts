@@ -35,7 +35,7 @@ source ./utils.sh
 
 echo 'Install LightDM'
 yay -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether light-locker i3-gaps --needed
-systemctl enable lightdm.service
+sudo systemctl enable lightdm.service
 echo 'Change the greeter-session to the appropriate greeter'
 sudo nano /etc/lightdm/lightdm.conf
 echo 'Change the greeter-session to the appropriate greeter'
