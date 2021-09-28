@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# set -e
-# source ./utils.sh
+set -e
+source ./utils.sh
 
 # echo 'Updating'
 # sudo pacman -Syu
