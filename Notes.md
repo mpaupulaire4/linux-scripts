@@ -8,7 +8,7 @@
 - Firefox
 - Bitwarden
 - Rofi (run menu thing)
-- FIRA Code (font)
+- Compositor (Some form of Picom)
 - ZSH (get rc squared away. ohmyzsh or custom config)
 - Get Work stuff set up
   - art
