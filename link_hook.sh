@@ -7,9 +7,12 @@ set -e
 HOOK_DIR='/etc/pacman.d/hooks'
 
 echo "Set HookDir to $HOOK_DIR/"
-sudo nan /etc/pacman.conf
+sudo nano /etc/pacman.conf
 
-mkdir -p $HOOK_DIR
+if [ ! -d "$HOOK_DIR" ]; then
+  mkdir -p $HOOK_DIR
+fi
+
 cp -i $MCONF/pkglists.hook $HOOK_DIR/
 
 create_link "$MCONF/pkglist.txt" "/etc/pkglist.txt"
