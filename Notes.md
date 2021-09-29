@@ -1,6 +1,7 @@
 # Notes
 ## TODO
 - Configure i3 (Window Manager)
+- Configure Polybar (Status Bar)
 - Kitty (Terminal)
 - VS Code
 - Ranger (file explorer)
