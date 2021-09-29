@@ -33,8 +33,10 @@ nvm install-latest-npm
 npm install -g yarn
 
 
+echo 'Install xorg'
+yay -S xorg xf86-video-intel --needed
 echo 'Install LightDM'
-yay -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether light-locker i3-gaps --needed
+yay -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether light-locker i3-gaps xorg --needed
 sudo systemctl enable lightdm.service
 echo 'Change the greeter-session to the appropriate greeter'
 sudo nano /etc/lightdm/lightdm.conf
