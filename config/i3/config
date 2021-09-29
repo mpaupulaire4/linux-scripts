@@ -51,17 +51,16 @@ font pango:Fira Code Mono 12
 # bindsym $Mod+Shift+n exec --no-startup-id dunstctl set-paused toggle
 
 # kill focused window
-bindsym Mod1+q kill
+bindsym $Mod+q kill
 
 # launchers (23 is tab)
-bindsym $Mod+/ exec --no-startup-id rofi -modi combi -show combi
-bindsym $Mod+tab exec --no-startup-id rofi -modi window -show window
+bindsym $Mod+Return     exec --no-startup-id rofi -modi combi -show combi
+bindsym $Mod+Tab        exec --no-startup-id rofi -modi window -show window
 
 # core
 # bindsym $Mod+w          exec --no-startup-id chromium
 # bindsym $Mod+f          exec --no-startup-id thunar
 # bindsym $Mod+t          exec --no-startup-id alacritty
-# bindsym $Mod+Return     exec --no-startup-id alacritty
 
 # suspend script
 # bindsym $Mod+Esc exec --no-startup-id systemctl suspend
@@ -162,8 +161,8 @@ bindsym $Mod+Shift+$right move right 10px
 # bindsym $Mod+Mod1+Shift+$right resize grow   right  10 px or 1 ppt
 
 # layout toggle, keycode 23 is Tab
-# bindcode $Mod+Shift+/  layout toggle tabbed split
-# bindcode $Mod+/        layout toggle splitv splith
+# bindcode $Mod+Shift+slash  layout toggle tabbed split
+# bindcode $Mod+slash        layout toggle splitv splith
 
 # switch to workspace with urgent window
 # for_window [urgent="latest"] focus
