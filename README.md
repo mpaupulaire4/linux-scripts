@@ -14,7 +14,8 @@
 - **clone this scripts repo then run `basic.sh`**
 
 ### Pacstrap Packages
-- `intel-ucode` or `amd-ucode` for processor updates. Add `initrd=\cpu_manufacturer-ucode.img` before normal `initrd`
+- `intel-ucode` or `amd-ucode` for processor updates.
+  - Add `initrd=\cpu_manufacturer-ucode.img` before normal `initrd`
 - `git`
 
-## Once installed you can run `post.sh` to get things setup
+## Once installed you can run `install.sh` to get things setup
