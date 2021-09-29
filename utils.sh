@@ -1,6 +1,6 @@
 MCONF=$(pwd)
 
-function yes_or_no {
+function yorn {
     while true; do
         read -p "$* [y/n]: " yn
         case $yn in
@@ -12,7 +12,7 @@ function yes_or_no {
 
 function create_link {
   if [[ -L "$2" ]]; then
-    if [[ ! -e "$2" ]] || yes_or_no "$2 is already a symlink, unlink it?"; then
+    if [[ ! -e "$2" ]] || yorn "$2 is already a symlink, unlink it?"; then
       unlink "$2"
     else
       return 0
