@@ -1,7 +1,6 @@
 # Notes
 ## TODO
-- Figure out symlinking of home and config files
-- Configure i3 (Window Manager)s
+- Configure i3 (Window Manager)
 - Kitty (Terminal)
 - VS Code
 - Ranger (file explorer)

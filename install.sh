@@ -68,10 +68,3 @@ fi
 if yorn 'Install foreign pkgs from fpkglist?'; then
   yay -S --needed - < fpkglist.txt
 fi
-
-
-
-# echo 'Install Fira Code'
-# yay -S ttf-fira-code
-# echo 'Sound (ALSA)'
-# yay -S alsa-utils sof-firmware
