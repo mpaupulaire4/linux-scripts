@@ -21,7 +21,7 @@ passwd mpaupulaire
 
 echo 'Setting Up Internet with IW'
 mkdir /etc/iwd
-cp -i $MCONF/iwd-main.conf > /etc/iwd/main.conf
+cp -i $MCONF/iwd-main.conf /etc/iwd/main.conf
 systemctl enable systemd-networkd.service
 systemctl enable systemd-resolved.service
 systemctl enable iwd.service

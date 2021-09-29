@@ -1,12 +1,19 @@
 # Notes
 ## TODO
 - Figure out symlinking of home and config files
-- Bitwarden
-- VS Code
-- Kitty (Terminal)
 - Configure i3 (Window Manager)s
+- Kitty (Terminal)
+- VS Code
+- Ranger (file explorer)
+- Firefox
+- Bitwarden
 - Rofi (run menu thing)
 - FIRA Code (font)
+- ZSH (get rc squared away. ohmyzsh or custom config)
+- Get Work stuff set up
+  - art
+  - docker
+  - npmrc token
 
 ## From Old Setup File
 ### Setting up QMK
