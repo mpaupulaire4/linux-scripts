@@ -13,7 +13,7 @@ if [ ! -d "$HOOK_DIR" ]; then
   sudo mkdir -p $HOOK_DIR
 fi
 
-cp -i $MCONF/pkglists.hook $HOOK_DIR/
+sudo cp -i $MCONF/pkglists.hook $HOOK_DIR/
 
 create_link "$MCONF/pkglist.txt" "/etc/pkglist.txt"
 create_link "$MCONF/fpkglist.txt" "/etc/fpkglist.txt"
