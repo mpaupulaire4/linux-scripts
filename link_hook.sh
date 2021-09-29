@@ -10,7 +10,7 @@ echo "Set HookDir to $HOOK_DIR/"
 sudo nano /etc/pacman.conf
 
 if [ ! -d "$HOOK_DIR" ]; then
-  mkdir -p $HOOK_DIR
+  sudo mkdir -p $HOOK_DIR
 fi
 
 cp -i $MCONF/pkglists.hook $HOOK_DIR/
