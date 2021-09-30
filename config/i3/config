@@ -28,7 +28,7 @@ font pango:Fira Code Mono 12
 
 # # run with reload
 # exec_always --no-startup-id xrdb -load ~/.Xresources
-# exec_always --no-startup-id feh --bg-scale /home/apeiros/Pictures/nord-noice.jpg
+exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/walls/*
 
 # # run once
 # exec --no-startup-id xfsettingsd
