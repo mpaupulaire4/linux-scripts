@@ -49,10 +49,6 @@ if yorn 'Install LightDM?'; then
   sudo nano /etc/lightdm/lightdm-webkit2-greeter.conf
 fi
 
-# if yorn 'Create PKGList Hook?'; then
-#   source ./link_hook.sh
-# fi
-
 if yorn 'Link dotfiles DIR?'; then
   source ./link_home.sh
 fi
