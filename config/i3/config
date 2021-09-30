@@ -51,19 +51,19 @@ font pango:Fira Code Mono 12
 # bindsym $Mod+Shift+n exec --no-startup-id dunstctl set-paused toggle
 
 # kill focused window
-bindsym $Mod+q kill
+bindsym $Mod+BackSpace  kill
 
-# launchers (23 is tab)
-bindsym $Mod+Return     exec --no-startup-id rofi -modi combi -show combi
-bindsym $Mod+Tab        exec --no-startup-id rofi -modi window -show window
+# launchers
+bindsym $Mod+slash        exec --no-startup-id rofi -modi run -show run
+bindsym $Mod+Tab          exec --no-startup-id rofi -modi window -show window
 
 # core
 # bindsym $Mod+w          exec --no-startup-id chromium
 # bindsym $Mod+f          exec --no-startup-id thunar
-# bindsym $Mod+t          exec --no-startup-id alacritty
+bindsym $Mod+Return       exec --no-startup-id kitty
 
 # suspend script
-# bindsym $Mod+Esc exec --no-startup-id systemctl suspend
+bindsym $Mod+Esc exec --no-startup-id systemctl suspend
 
 # screenshot
 # bindsym $Mod+Shift+s exec --no-startup-id flameshot gui
@@ -99,8 +99,11 @@ bindsym $Mod+Tab        exec --no-startup-id rofi -modi window -show window
 # bindsym $mod+Mod2+KP_8 workspace 8
 
 # switch to next or previous workspace
-# bindsym $Mod+Shift+Left workspace prev  # use home
-# bindsym $Mod+Shift+Right workspace next # use end
+bindsym $Mod+Home           workspace prev
+bindsym $Mod+End            workspace next
+# move to next or previous workspace
+bindsym $Mod+Shift+Home     move window to workspace prev_on_output
+bindsym $Mod+Shift+End      move window to workspace next_on_output
 
 # move focused container to workspace
 # bindsym $Mod+Shift+1 move container to workspace 1; workspace 1
@@ -139,19 +142,19 @@ bindsym $Mod+Shift+f floating toggle
 floating_modifier  Mod1
 
 # change focus
-bindsym $Mod+$left  focus left
-bindsym $Mod+$down  focus down
-bindsym $Mod+$up    focus up
-bindsym $Mod+$right focus right
+bindsym $Mod+$left          focus left
+bindsym $Mod+$down          focus down
+bindsym $Mod+$up            focus up
+bindsym $Mod+$right         focus right
 
-# bindsym $Mod+p focus parent # use page up
-# bindsym $Mod+c focus child  # use page down
+bindsym $Mod+Prior          focus parent # page up
+bindsym $Mod+Next           focus child  # page downs
 
 # move focused window
-bindsym $Mod+Shift+$up    move up    10px
-bindsym $Mod+Shift+$down  move down  10px
-bindsym $Mod+Shift+$left  move left  10px
-bindsym $Mod+Shift+$right move right 10px
+bindsym $Mod+Shift+$up      move up    10px
+bindsym $Mod+Shift+$down    move down  10px
+bindsym $Mod+Shift+$left    move left  10px
+bindsym $Mod+Shift+$right   move right 10px
 
 
 # Size
@@ -161,8 +164,8 @@ bindsym $Mod+Shift+$right move right 10px
 # bindsym $Mod+Mod1+Shift+$right resize grow   right  10 px or 1 ppt
 
 # layout toggle, keycode 23 is Tab
-# bindcode $Mod+Shift+slash  layout toggle tabbed split
-# bindcode $Mod+slash        layout toggle splitv splith
+bindsym $Mod+t              layout toggle tabbed split
+bindsym $Mod+Shift+t        layout toggle splitv splith
 
 # switch to workspace with urgent window
 # for_window [urgent="latest"] focus
