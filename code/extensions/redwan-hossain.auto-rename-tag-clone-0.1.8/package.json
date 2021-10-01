@@ -1,0 +1,64 @@
+{
+	"name": "auto-rename-tag-clone",
+	"displayName": "Auto Rename Tag Clone",
+	"description": "Auto rename paired HTML/XML tag",
+	"version": "0.1.8",
+	"publisher": "redwan-hossain",
+	"license": "MIT",
+	"icon": "images/logo.png",
+	"engines": {
+		"vscode": "^1.41.1"
+	},
+	"categories": [
+		"Other",
+		"Programming Languages"
+	],
+	"keywords": [
+		"AutoComplete",
+		"rename",
+		"tag",
+		"html",
+		"xml",
+		"multi-root ready"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/redwan-hossain/auto-rename-tag-clone"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./packages/extension/dist/extensionMain.js",
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		},
+		"virtualWorkspaces": true
+	},
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Auto Rename Tag configuration",
+			"properties": {
+				"auto-rename-tag.activationOnLanguage": {
+					"type": "array",
+					"default": [
+						"*"
+					],
+					"description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"__metadata": {
+		"id": "0135cc2d-6819-4d20-ab0a-8146a3693334",
+		"publisherId": "6eadb9c8-7e82-4680-80a9-6e9f9a91f5a1",
+		"publisherDisplayName": null,
+		"installedTimestamp": 1633122674990
+	}
+}
