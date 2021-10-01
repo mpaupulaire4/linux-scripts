@@ -29,8 +29,7 @@ fi
 
 if yorn 'Install NVM and Node?'; then
   yay -S nvm --needed
-  echo 'source /usr/share/nvm/init-nvm.sh' >> $HOME/.zshrc
-  source $HOME/.zshrc
+  source /usr/share/nvm/init-nvm.sh
   nvm install 'lts/*'
   nvm install-latest-npm
   npm install -g yarn
