@@ -36,7 +36,7 @@ if yorn 'Install NVM and Node?'; then
 fi
 
 if yorn 'Install xorg?'; then
-  yay -S xorg-server xf86-video-intel --needed
+  yay -S xorg-server xf86-video-intel xorg-xrandr --needed
 fi
 
 if yorn 'Install LightDM?'; then
