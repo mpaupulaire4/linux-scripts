@@ -29,7 +29,7 @@ padding = 2
 ; module-margin-right = 2
 module-margin = 2
 
-font-0 = NotoSans-Regular:size=8;0
+font-0 = Fira Code Retina:size=8;0
 font-1 = FontAwesome:size=8;-2
 font-2 = ypn envypn:size=10;-1
 font-3 = Termsynu:size=8;-1
