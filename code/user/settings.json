@@ -1,0 +1,77 @@
+{
+  "editor.fontFamily": "Fira Code Retina",
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.dragAndDrop": false,
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.tree.renderIndentGuides": "always",
+  "breadcrumbs.symbolPath": "off",
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.mouseBackForwardToNavigate": false,
+  "workbench.editor.openSideBySideDirection": "down",
+  "workbench.editor.showTabs": false,
+  "workbench.settings.useSplitJSON": true,
+  "zenMode.hideLineNumbers": false,
+  "window.menuBarVisibility": "toggle",
+  "explorer.incrementalNaming": "smart",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.showExitAlert": false,
+  "telemetry.enableTelemetry": false,
+  "html.format.indentHandlebars": true,
+  "git.enableSmartCommit": true,
+  "bracket-pair-colorizer-2.showBracketsInGutter": true,
+  "highlight-matching-tag.highlightSelfClosing": true,
+  "highlight-matching-tag.highlightFromContent": true,
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "right": {
+        "surround": "#155ffa"
+      },
+      "left": {
+        "surround": "#155ffa"
+      }
+    }
+  },
+  "indentRainbow.colors": [
+    "rgba(90,90,90,0.3)",
+    "rgba(60,60,60,0.3)"
+  ],
+  "workbench.colorTheme": "One Dark Pro",
+  "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "editor.occurrencesHighlight": false,
+  "editor.renderLineHighlight": "all",
+  "scm.alwaysShowRepositories": true,
+  "extensions.ignoreRecommendations": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.statusBar.enabled": false,
+  "githubPullRequests.fileListLayout": "tree",
+  "editor.detectIndentation": false,
+  // "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
+  "terminal.integrated.tabs.enabled": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "files.associations": {
+  },
+}
