@@ -7,7 +7,7 @@ throttle-limit = 5
 ; wm-restack = i3
 wm-name = Polybar Top
 
-monitor = primary
+; monitor = primary
 width = 100%
 height = 27
 offset-y = 5
