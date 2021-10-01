@@ -22,7 +22,7 @@ gaps outer 0
 font pango:Fira Code 12
 
 # ###############        Bar         ##################
-# exec_always --no-startup-id /home/apeiros/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # ###############     Autostart      ##################
 

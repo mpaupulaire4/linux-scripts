@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #B321252b
+background = #282c34
 background-alt = #21252b
 
 ;F5 for 96%
@@ -40,7 +40,7 @@ offset-x = 20
 offset-y = 0
 radius = 6.0
 fixed-center = true
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -48,10 +48,10 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-top-size = 0
-border-left-size = 24
-border-right-size = 24
-border-bottom-size = 24
+border-top-size = 8
+border-left-size = 8
+border-right-size = 8
+border-bottom-size = 10
 border-color = #00000000
 
 padding-left = 0
@@ -373,7 +373,7 @@ menu-3-0-foreground = ${colors.background-alt}
 menu-3-0-background = ${colors.alert}
 
 [global/wm]
-margin-top = 24
+margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
