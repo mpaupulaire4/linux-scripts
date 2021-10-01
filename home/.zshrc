@@ -338,6 +338,7 @@ fi
 
 ## END OF FILE #################################################################
 export NVM_DIR="$HOME/.nvm"
+export NPM_TOKEN="$(grep -s //registry.npmjs.org/:_authToken= $HOME/.npmrc | cut -c34- )"
 source /usr/share/nvm/init-nvm.sh
 
 
