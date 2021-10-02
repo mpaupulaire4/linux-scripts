@@ -48,6 +48,11 @@ if yorn 'Install LightDM?'; then
   sudo nano /etc/lightdm/lightdm-webkit2-greeter.conf
 fi
 
+if yorn 'Install and enable power management?'; then
+  yay -S tlp tlpui
+  sudo systemctl enable tlp
+fi
+
 if yorn 'Link dotfiles DIR?'; then
   source ./link_home.sh
 fi
