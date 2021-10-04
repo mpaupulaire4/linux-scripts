@@ -1,0 +1,10 @@
+breezex-cursor-theme
+lightdm-webkit-theme-aether
+nordic-darker-theme
+nvm
+paper-icon-theme
+picom-ibhagwan-git
+polybar
+ttf-font-awesome-4
+vscodium-bin
+yay
