@@ -24,7 +24,11 @@ if yorn 'Configure Reflector?'; then
   yay -S reflector --needed
   sudo cp -i $MCONF/reflector.conf /etc/xdg/reflector/reflector.conf
   sudo systemctl enable reflector.service
+fi
 
+if yorn 'Configure Reflector?'; then
+  yay -S bluez bluez-utils --needed
+  sudo systemctl enable bluetooth.service
 fi
 
 if yorn 'Install NVM and Node?'; then
