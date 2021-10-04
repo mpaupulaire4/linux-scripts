@@ -55,8 +55,9 @@ exec --no-startup-id light-locker &
 bindsym $Mod+BackSpace  kill
 
 # launchers
-bindsym $Mod+slash        exec --no-startup-id rofi -modi run -show run
-bindsym $Mod+Tab          exec --no-startup-id rofi -modi window -show window
+bindsym $Mod+slash        exec --no-startup-id rofi -show run
+bindsym $Mod+Tab          exec --no-startup-id rofi -show window
+# bindsym $Mod+w            exec --no-startup-id rofi -show wifi
 
 # core
 # bindsym $Mod+w          exec --no-startup-id chromium

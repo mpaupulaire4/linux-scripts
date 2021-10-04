@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,run,keys";
+	modi: "window,run,drun,keys,wifi:./.config/rofi/wifi.sh";
 	terminal: "kitty";
 /*	width: 50;*/
 /*	lines: 15;*/
@@ -143,13 +143,5 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 
-	padding: 20;
-	line-padding: 2;
-	separator-style: "solid";
-	hide-scrollbar: true;
-	color-normal: "#1c2023, #919ba0, #1c2023, #a4a4a4, #1c2023";
-	color-urgent: "argb:00000000, #f43753, argb:00000000, argb:00000000, #e29a49";
-	color-active: "argb:00000000, #49bbfb, argb:00000000, argb:00000000, #e29a49";
-	color-window: "#1c2023, #919ba0, #1c2023";
 }
 @theme "./theme.rasi"
