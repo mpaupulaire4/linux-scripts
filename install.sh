@@ -27,7 +27,7 @@ if yorn 'Configure Reflector?'; then
 fi
 
 if yorn 'Configure Reflector?'; then
-  yay -S bluez bluez-utils --needed
+  yay -S bluez --needed
   sudo systemctl enable bluetooth.service
 fi
 
