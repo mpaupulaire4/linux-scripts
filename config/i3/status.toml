@@ -1,0 +1,52 @@
+theme = "nord-dark"
+icons = "awesome"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+icons_format = "{icon}"
+
+[[block]]
+block = "cpu"
+interval = 1
+icons_format = "{icon}"
+format = "{utilization:3} {barchart} {frequency}"
+
+[[block]]
+block = "net"
+format = "{ssid} {signal_strength}"
+interval = 5
+hide_inactive = true
+hide_missing = true
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+natural_mapping = true
+show_volume_when_muted = true
+on_click = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+natural_mapping = true
+show_volume_when_muted = true
+on_click = "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+device_kind = "source"
+
+[[block]]
+block = "time"
+interval = 20
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+interval = 20
+allow_missing = true
+hide_missing = true
+format = "{percentage} {time}"
