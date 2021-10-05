@@ -238,6 +238,9 @@ focus_on_window_activation urgent
 bar {
     font pango:Fira Code Retina, FontAwesome 12
     position bottom
+    mode hide
+    modifier $Mod
+    tray_output none
     status_command /usr/bin/i3status-rs ./.config/i3/status.toml
     colors {
         separator #666666
