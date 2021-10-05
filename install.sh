@@ -72,3 +72,7 @@ fi
 if yorn 'Install foreign pkgs from fpkglist?'; then
   yay -S --needed - < fpkglist.txt
 fi
+
+if yorn 'Create pkg hooks?'; then
+  source ./link_hook
+fi
