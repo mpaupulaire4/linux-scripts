@@ -76,3 +76,7 @@ fi
 if yorn 'Create pkg hooks?'; then
   source ./link_hook
 fi
+
+if yorn 'Link Wallpapers?'; then
+  create_link $MCONF/walls $HOME/Pictures/walls
+fi
