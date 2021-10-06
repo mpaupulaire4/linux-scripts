@@ -6,6 +6,8 @@ blueman
 bluez
 bluez-utils
 dhcpcd
+docker
+docker-compose
 efibootmgr
 feh
 firefox
@@ -26,6 +28,7 @@ linux-firmware
 lvm2
 nano
 openssh
+openvpn
 pavucontrol
 pulseaudio
 pulseaudio-alsa
@@ -47,3 +50,4 @@ xorg-server
 xorg-xrandr
 zip
 zsh
+zsh-completions

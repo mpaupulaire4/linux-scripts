@@ -26,15 +26,16 @@ CLIPBOARD_MODE=
 ENTER_CMD=copy_password
 
 # Keyboard shortcuts
-KB_SYNC="Alt+r"
-KB_URLSEARCH="Alt+u"
-KB_NAMESEARCH="Alt+n"
-KB_FOLDERSELECT="Alt+c"
-KB_TOTPCOPY="Alt+t"
-KB_LOCK="Alt+L"
-KB_TYPEALL="Alt+1"
-KB_TYPEUSER="Alt+2"
-KB_TYPEPASS="Alt+3"
+MODIFIER="Super"
+KB_SYNC="$MODIFIER+r"
+KB_URLSEARCH="$MODIFIER+u"
+KB_NAMESEARCH="$MODIFIER+n"
+KB_FOLDERSELECT="$MODIFIER+f"
+KB_TOTPCOPY="$MODIFIER+c"
+KB_LOCK="$MODIFIER+L"
+KB_TYPEALL="$MODIFIER+a"
+KB_TYPEUSER="$MODIFIER+Shift+Return"
+KB_TYPEPASS="$MODIFIER+Return"
 
 # Item type classification
 TYPE_LOGIN=1
@@ -254,12 +255,15 @@ auto_type() {
         type_word "$(echo "$2" | jq -r '.[0].login.username')"
         type_tab
         type_word "$(echo "$2" | jq -r '.[0].login.password')"
+        copy_totp "$2"
         ;;
       username)
         type_word "$(echo "$2" | jq -r '.[0].login.username')"
+        copy_password "$2"
         ;;
       password)
         type_word "$(echo "$2" | jq -r '.[0].login.password')"
+        copy_totp "$2"
         ;;
     esac
   fi

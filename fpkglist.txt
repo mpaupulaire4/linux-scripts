@@ -9,3 +9,4 @@ tlpui
 ttf-font-awesome-4
 vscodium-bin
 yay
+zoom
