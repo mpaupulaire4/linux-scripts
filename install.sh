@@ -26,7 +26,7 @@ if yorn 'Configure Reflector?'; then
   sudo systemctl enable reflector.service
 fi
 
-if yorn 'Configure Reflector?'; then
+if yorn 'Configure Bluetooth?'; then
   yay -S bluez --needed
   sudo systemctl enable bluetooth.service
 fi
@@ -66,7 +66,7 @@ if yorn 'Link Config DIR?'; then
 fi
 
 if yorn 'Install pkgs from pkglist?'; then
-  pacman -S --needed - < pkglist.txt
+  sudo pacman -S --needed - < pkglist.txt
 fi
 
 if yorn 'Install foreign pkgs from fpkglist?'; then
@@ -74,7 +74,7 @@ if yorn 'Install foreign pkgs from fpkglist?'; then
 fi
 
 if yorn 'Create pkg hooks?'; then
-  source ./link_hook
+  source ./link_hook.sh
 fi
 
 if yorn 'Link Wallpapers?'; then
