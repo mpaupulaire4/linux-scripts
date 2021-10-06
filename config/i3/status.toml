@@ -16,6 +16,7 @@ format = "{utilization:3} {barchart} {frequency}"
 
 [[block]]
 block = "net"
+device = "wlan0"
 format = "{ssid} {signal_strength}"
 interval = 5
 hide_inactive = true

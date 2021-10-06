@@ -4,6 +4,7 @@ nordic-darker-theme
 nvm
 paper-icon-theme
 picom-ibhagwan-git
+tlpui
 ttf-font-awesome-4
 vscodium-bin
 yay
