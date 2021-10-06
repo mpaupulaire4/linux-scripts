@@ -5,7 +5,7 @@ source ./utils.sh
 set -e
 
 sudo mkdir -p /etc/pacman.d/hooks/
-cp -i $MCONF/pkglists.hook /etc/pacman.d/hooks/
+sudo cp -i $MCONF/pkglists.hook /etc/pacman.d/hooks/
 
 sudo nano /etc/pacman.conf
 
