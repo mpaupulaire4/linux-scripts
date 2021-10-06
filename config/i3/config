@@ -64,9 +64,9 @@ client.background       #2e3440
 bindsym $Mod+BackSpace    kill
 
 # launchers
-bindsym $Mod+p            exec --no-startup-id ~/.local/bin/bwmenu
+bindsym $Mod+Tab          exec --no-startup-id ~/.local/bin/bwmenu
 bindsym $Mod+slash        exec --no-startup-id rofi -show combi
-bindsym $Mod+Tab          exec --no-startup-id rofi -show window
+# bindsym $Mod+Tab          exec --no-startup-id rofi -show window
 # bindsym $Mod+w            exec --no-startup-id rofi -show wifi
 
 # core
@@ -227,7 +227,8 @@ mouse_warping none
 ############    application settings   ############
 
 # assign applications to specific workspace
-# assign [class="(?i)(?:thunar)"] → 1
+assign [class="(?i)(?:slack)"] → "2:comms"
+assign [class="(?i)(?:vscodium)"] → "3:code"
 # assign [class="(?i)(?:chromium)"] → 3
 # assign [class="(?i)(?:jetbrains-idea-ce)"] → 4
 # assign [class="(?i)(?:Spotify)"] → 5
