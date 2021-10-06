@@ -28,7 +28,6 @@ font pango:Fira Code Retina Bold 12
 
 # # run with reload
 # exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id feh --no-fehbg --bg-scale --randomize ~/Pictures/walls/*
 
 # # run once
