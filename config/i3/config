@@ -62,10 +62,10 @@ client.background       #2e3440
 # bindsym $Mod+Shift+n exec --no-startup-id dunstctl set-paused toggle
 
 # kill focused window
-bindsym $Mod+BackSpace  kill
+bindsym $Mod+BackSpace    kill
 
 # launchers
-bindsym $Mod+p            exec --no-startup-id bwmenu
+bindsym $Mod+p            exec --no-startup-id ~/.local/bin/bwmenu
 bindsym $Mod+slash        exec --no-startup-id rofi -show combi
 bindsym $Mod+Tab          exec --no-startup-id rofi -show window
 # bindsym $Mod+w            exec --no-startup-id rofi -show wifi
@@ -76,7 +76,7 @@ bindsym $Mod+Tab          exec --no-startup-id rofi -show window
 bindsym $Mod+Return       exec --no-startup-id kitty
 
 # suspend script
-bindsym $Mod+Esc          exec --no-startup-id systemctl suspend
+# bindsym $Mod+Esc          exec --no-startup-id systemctl suspend
 
 # screenshot
 # bindsym $Mod+Shift+s exec --no-startup-id flameshot gui
