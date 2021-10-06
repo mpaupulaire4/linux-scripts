@@ -20,7 +20,7 @@ if yorn 'Install YAY?'; then
 fi
 
 if yorn 'Configure Reflector?'; then
-  mkdir -p /etc/xdg/reflector
+  sudo mkdir -p /etc/xdg/reflector
   yay -S reflector --needed
   sudo cp -i $MCONF/reflector.conf /etc/xdg/reflector/reflector.conf
   sudo systemctl enable reflector.service
