@@ -8,7 +8,7 @@ echo 'Updating'
 pacman -Syu
 
 echo 'Installing Some Basic Packages'
-pacman -S cryptsetup lvm2 efibootmgr zsh nano iwd git sudo xdg-user-dirs grml-zsh-config intel-ucode --needed
+pacman -S cryptsetup lvm2 efibootmgr zsh nano iwd git sudo xdg-user-dirs grml-zsh-config intel-ucode dhcpcd --needed
 
 echo 'Create a password for the root user'
 passwd
@@ -19,11 +19,10 @@ useradd -m -G wheel -s /usr/bin/zsh mpaupulaire
 echo 'Set User mpaupulaire password'
 passwd mpaupulaire
 
-echo 'Setting Up Internet with IW'
-mkdir /etc/iwd
-cp -i $MCONF/iwd-main.conf /etc/iwd/main.conf
+echo 'Setting Up Internet'
 systemctl enable systemd-networkd.service
 systemctl enable systemd-resolved.service
+systemctl enable dhcpcd.service
 systemctl enable iwd.service
 
 echo 'Edit sudoers file'

@@ -4,6 +4,7 @@ base
 blueman
 bluez
 bluez-utils
+dhcpcd
 efibootmgr
 feh
 firefox

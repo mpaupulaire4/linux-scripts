@@ -9,7 +9,7 @@
 - foloow Encryption for partition set up then with install guid. Swtich back for initramfs and boot.
 - Decide if you are going to use `linux` or `linux-lts` kernels.
 - see `efi.sh` for EFI boot script
-- boot config located at `/etc/mkinitcpio.conf`, `mkinitcpio -p` to generate
+- boot config located at `/etc/mkinitcpio.conf`, `mkinitcpio -P` to generate
 - `lsblk -f` To get UUIDs where needed
 - **clone this scripts repo then run `basic.sh`**
 
