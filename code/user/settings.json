@@ -82,4 +82,5 @@
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
   "npm.fetchOnlinePackageInfo": false,
+  "terminal.integrated.fontFamily": "Fira Code Retina",
 }

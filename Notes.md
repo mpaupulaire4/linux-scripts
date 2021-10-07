@@ -1,17 +1,12 @@
 # Notes
 ## TODO
 - Configure i3 (Window Manager)
-- Configure Dunst (Notifications)
 - Kitty (Terminal)
 - Ranger (file explorer)
 - Firefox
-- Bitwarden
 - Rofi (run menu thing)
 - ZSH (get rc squared away. ohmyzsh or custom config)
-- Get Work stuff set up
-  - art
-  - docker
-  - npmrc token
+- Configure Dunst (Notifications)
 
 ## From Old Setup File
 ### Setting up QMK
