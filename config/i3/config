@@ -228,7 +228,7 @@ mouse_warping none
 
 # assign applications to specific workspace
 assign [class="(?i)(?:slack)"] → "2:comms"
-assign [class="(?i)(?:vscodium)"] → "3:code"
+assign [class="(?i)(?:vscodium)"] → "4:code"
 # assign [class="(?i)(?:chromium)"] → 3
 # assign [class="(?i)(?:jetbrains-idea-ce)"] → 4
 # assign [class="(?i)(?:Spotify)"] → 5
