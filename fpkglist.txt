@@ -5,6 +5,7 @@ nordic-darker-theme
 nvm
 paper-icon-theme
 picom-ibhagwan-git
+sequeler-git
 slack-desktop
 tlpui
 ttf-font-awesome-4

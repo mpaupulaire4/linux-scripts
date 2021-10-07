@@ -37,13 +37,20 @@ exec --no-startup-id light-locker &
 #############         Colors           ##################
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2e3440 #2e3440 #ffffff #b48ead   #5e81ac
-client.focused_inactive #3b4252 #3b4252 #d8dee9 #484e50   #5f676a
-client.unfocused        #4c566a #4c566a #d8dee9 #292d2e   #222222
-client.urgent           #b48ead #b48ead #ffffff #900000   #900000
+client.focused          #a3be8c #a3be8c #2e3440 #b48ead   #a3be8c
+client.focused_inactive #2e3440 #2e3440 #d8dee9 #484e50   #5f676a
+client.unfocused        #4c566a #4c566a #d8dee9 #4c566a   #2e3440
+client.urgent           #b48ead #b48ead #ffffff #b48ead   #b48ead
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #2e3440
+
+# client.focused 	#4C566A 	#4C566A 	#A3BE8C 	#EBCB8B 	#5E81AC
+# client.focused_inactive 	#2E3440 	#B48EAD 	#A3BE8C 	#8FBCBB 	#434C5E
+# client.unfocused 	#2E3440 	#3B4252 	#8FBCBB 	#8FBCBB 	#3B4252
+# client.urgent 	#BF616A 	#BF616A 	#2E3440 	#BF616A 	#BF616A
+# client.placeholder 	#88C0D0 	#2E3440 	#B48EAD 	#2E3440 	#2E3440
+# client.background 	#D8DEE9
 
 
 #############         Bindings           ##################
@@ -196,12 +203,12 @@ focus_wrapping no
 
 ###############      Border & Gaps     ###############
 
-new_window pixel 2
-new_float  pixel 2
-default_border pixel 2
-default_floating_border pixel 2
+new_window pixel 8
+new_float  pixel 8
+default_border pixel 8
+default_floating_border pixel 8
 
-hide_edge_borders smart
+hide_edge_borders none
 
 # bindsym $Mod+shift+b border toggle
 
@@ -223,6 +230,7 @@ hide_edge_borders smart
 ############    mouse settings   ############
 
 mouse_warping none
+floating_modifier $Mod
 
 ############    application settings   ############
 
@@ -235,10 +243,10 @@ assign [class="(?i)(?:vscodium)"] → "4:code"
 # assign [class="(?i)(?:discord)"] → 8
 
 # focus, floating, & sticky
-# for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
-# for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
-for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
-# for_window [class="jetbrains-idea-ce" title="win0"]   floating enable
+# for_window [class="(?i)(?:qt5ct|pinentry)"]             floating enable, focus
+# for_window [title="(?i)(?:copying|deleting|moving)"]    floating enable
+for_window [window_role="(?i)(?:pop-up|setup)"]         floating enable
+for_window [class="zoom"]                               floating enable
 
 popup_during_fullscreen smart
 force_display_urgency_hint 1000 ms

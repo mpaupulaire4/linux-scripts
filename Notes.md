@@ -1,7 +1,7 @@
 # Notes
 ## TODO
 - Configure i3 (Window Manager)
-- Configure Polybar (Status Bar)
+- Configure Dunst (Notifications)
 - Kitty (Terminal)
 - Ranger (file explorer)
 - Firefox
