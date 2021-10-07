@@ -1,4 +1,5 @@
 breezex-cursor-theme
+docker-compose-bin
 lightdm-webkit-theme-aether
 nordic-darker-theme
 nvm

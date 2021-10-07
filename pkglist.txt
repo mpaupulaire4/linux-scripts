@@ -7,7 +7,6 @@ bluez
 bluez-utils
 dhcpcd
 docker
-docker-compose
 efibootmgr
 feh
 firefox
