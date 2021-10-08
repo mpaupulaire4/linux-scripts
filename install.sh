@@ -57,12 +57,8 @@ if yorn 'Install and enable power management?'; then
   sudo systemctl enable tlp
 fi
 
-if yorn 'Link dotfiles DIR?'; then
-  source ./link_home.sh
-fi
-
-if yorn 'Link Config DIR?'; then
-  source ./link_config.sh
+if yorn 'Sync Dirs?'; then
+  source ./sync.sh
 fi
 
 if yorn 'Install pkgs from pkglist?'; then

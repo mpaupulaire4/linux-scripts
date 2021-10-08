@@ -23,3 +23,21 @@ function create_link {
   fi
   ln -siv $1 $2
 }
+
+function clean_link {
+  if [[ -L "$1" && ! -e "$1" ]]; then
+    echo "$1 cleaned"
+    unlink $1
+  fi
+}
+
+
+function create_links {
+  find $1 -maxdepth 1 -mindepth 1 -print0 | while IFS= read -d '' filename; do
+    create_link "$filename" "$2/$(basename $filename)"
+  done
+
+  find $2 -maxdepth 1 -type l -print0 | while IFS= read -r -d '' filename; do
+    clean_link "$filename"
+  done
+}
