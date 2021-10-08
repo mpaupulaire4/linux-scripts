@@ -330,14 +330,14 @@
     background = "#2f343f"
     foreground = "#f5f8f6"
     frame_color = "#a3be8c"
-    timeout = 2
+    timeout = 6
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#2f343f"
     foreground = "#f5f8f6"
-    timeout = 4
+    timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
