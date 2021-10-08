@@ -2,17 +2,18 @@
 
 # border & title
 for_window [class="^.*"] title_format "%title"
+title_align center
 
 # mod key used for most binds
 # Mod1 = Alt
 # Mod4 = Super
 set $Mod Mod4
 
-# direction keys
-set $up Up
-set $down Down
-set $left Left
-set $right Right
+# alt direction keys
+set $up i
+set $down k
+set $left j
+set $right l
 
 # gaps
 gaps inner 12
@@ -25,7 +26,6 @@ font pango:Fira Code Retina Bold 12
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # ###############     Autostart      ##################
-
 # # run with reload
 # exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id feh --no-fehbg --bg-scale --randomize ~/Pictures/walls/*
@@ -39,19 +39,12 @@ exec --no-startup-id dunst &
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #a3be8c #a3be8c #2e3440 #b48ead   #a3be8c
-client.focused_inactive #2e3440 #2e3440 #d8dee9 #484e50   #5f676a
-client.unfocused        #4c566a #4c566a #d8dee9 #4c566a   #2e3440
-client.urgent           #b48ead #b48ead #ffffff #b48ead   #b48ead
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused_inactive #a3be8c #2e3440 #a3be8c #4c566a   #4c566a
+client.unfocused        #4c566a #4c566a #e5e9f0 #4c566a   #2e3440
+client.urgent           #bf616a #bf616a #e5e9f0 #bf616a   #bf616a
+client.placeholder      #2e3440 #2e3440 #e5e9f0 #2e3440   #2e3440
 
 client.background       #2e3440
-
-# client.focused 	#4C566A 	#4C566A 	#A3BE8C 	#EBCB8B 	#5E81AC
-# client.focused_inactive 	#2E3440 	#B48EAD 	#A3BE8C 	#8FBCBB 	#434C5E
-# client.unfocused 	#2E3440 	#3B4252 	#8FBCBB 	#8FBCBB 	#3B4252
-# client.urgent 	#BF616A 	#BF616A 	#2E3440 	#BF616A 	#BF616A
-# client.placeholder 	#88C0D0 	#2E3440 	#B48EAD 	#2E3440 	#2E3440
-# client.background 	#D8DEE9
 
 
 #############         Bindings           ##################
@@ -97,6 +90,25 @@ bindsym $Mod+Return       exec --no-startup-id kitty
 # bindsym Control+F2        exec --no-startup-id pamixer -d 4
 
 ###########          Workspace Bindings          ###############
+
+set $mode_workspace Workspaces: [Up/Down]Vertical [Left/Right]Horizontal
+bindsym $Mod+apostrophe mode "$mode_workspace"
+mode "$mode_workspace" {
+    bindsym $Mod+j            workspace number "2: comm"
+    bindsym $Mod+k            workspace number "1: home"
+    bindsym $Mod+m            workspace number "4: code"
+    bindsym $Mod+comma        workspace number "3: docs"
+
+    bindsym $Mod+Shift+j      move to workspace number "2: comm"
+    bindsym $Mod+Shift+k      move to workspace number "1: home"
+    bindsym $Mod+Shift+m      move to workspace number "4: code"
+    bindsym $Mod+Shift+comma  move to workspace number "3: docs"
+
+
+    bindsym Escape          mode "default"
+    bindsym Return          mode "default"
+    bindsym $Mod+apostrophe mode "default"
+}
 
 # switch to workspace
 # bindsym $Mod+1 workspace 1
@@ -153,28 +165,67 @@ workspace_auto_back_and_forth yes
 bindsym $Mod+Shift+r restart
 
 # reload the configuration file
-# bindsym $Mod+Shift+c reload
+bindsym $Mod+r reload
 
 ############      Container/Window control  ############
 
 # floating
 bindsym $Mod+Shift+f floating toggle
-floating_modifier  Mod1
+floating_modifier $Mod
 
 # change focus
-bindsym $Mod+$left          focus left
-bindsym $Mod+$down          focus down
+bindsym $Mod+Up             focus up
+bindsym $Mod+Down           focus down
+bindsym $Mod+Left           focus left
+bindsym $Mod+Right          focus right
+
 bindsym $Mod+$up            focus up
+bindsym $Mod+$down          focus down
+bindsym $Mod+$left          focus left
 bindsym $Mod+$right         focus right
 
 bindsym $Mod+Prior          focus parent
 bindsym $Mod+Next           focus child
 
 # move focused window
-bindsym $Mod+Shift+$up      move up    10px
-bindsym $Mod+Shift+$down    move down  10px
-bindsym $Mod+Shift+$left    move left  10px
-bindsym $Mod+Shift+$right   move right 10px
+bindsym $Mod+Shift+Up       move up    20px
+bindsym $Mod+Shift+Down     move down  20px
+bindsym $Mod+Shift+Left     move left  20px
+bindsym $Mod+Shift+Right    move right 20px
+
+bindsym $Mod+Shift+$up      move up    20px
+bindsym $Mod+Shift+$down    move down  20px
+bindsym $Mod+Shift+$left    move left  20px
+bindsym $Mod+Shift+$right   move right 20px
+
+set $mode_resize Resize: [Up/Down]Vertical [Left/Right]Horizontal
+bindsym $Mod+m mode "$mode_resize"
+mode "$mode_resize" {
+    bindsym $Mod+$up          resize grow   up     10 px or 1 ppt
+    bindsym $Mod+$down        resize grow   down   10 px or 1 ppt
+    bindsym $Mod+$left        resize grow   left   10 px or 1 ppt
+    bindsym $Mod+$right       resize grow   right  10 px or 1 ppt
+
+    bindsym $Mod+Shift+$up    resize shrink up     10 px or 1 ppt
+    bindsym $Mod+Shift+$down  resize shrink down   10 px or 1 ppt
+    bindsym $Mod+Shift+$left  resize shrink left   10 px or 1 ppt
+    bindsym $Mod+Shift+$right resize shrink right  10 px or 1 ppt
+
+    bindsym $Mod+Up           resize grow   up     10 px or 1 ppt
+    bindsym $Mod+Down         resize grow   down   10 px or 1 ppt
+    bindsym $Mod+Left         resize grow   left   10 px or 1 ppt
+    bindsym $Mod+Right        resize grow   right  10 px or 1 ppt
+
+    bindsym $Mod+Shift+Up     resize shrink up     10 px or 1 ppt
+    bindsym $Mod+Shift+Down   resize shrink down   10 px or 1 ppt
+    bindsym $Mod+Shift+Left   resize shrink left   10 px or 1 ppt
+    bindsym $Mod+Shift+Right  resize shrink right  10 px or 1 ppt
+
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $Mod+m mode "default"
+}
 
 
 # Size
@@ -185,8 +236,8 @@ bindsym $Mod+Shift+$right   move right 10px
 
 # layout toggle ad split
 bindsym $Mod+t              layout toggle tabbed split
-bindsym $Mod+Shift+t        layout toggle splitv splith
-bindsym $Mod+s              split toggle
+bindsym $Mod+s              layout toggle splitv splith
+bindsym $Mod+Shift+s        split toggle
 
 # switch to workspace with urgent window
 # for_window [urgent="latest"] focus
@@ -231,13 +282,18 @@ hide_edge_borders none
 ############    mouse settings   ############
 
 mouse_warping none
-floating_modifier $Mod
 
 ############    application settings   ############
+workspace "1: home"       output primary
+workspace "2: comm"       output nonprimary
+workspace "3: docs"       output primary
+workspace "4: code"       output nonprimary
+# workspace 5               output VGA1 LVDS1
+# workspace "2: vim"        output VGA1
 
 # assign applications to specific workspace
-assign [class="(?i)(?:slack)"] → "2:comms"
-assign [class="(?i)(?:vscodium)"] → "4:code"
+assign [class="(?i)(?:slack)"] → number "2: comm"
+assign [class="(?i)(?:vscodium)"] → number "4: code"
 # assign [class="(?i)(?:chromium)"] → 3
 # assign [class="(?i)(?:jetbrains-idea-ce)"] → 4
 # assign [class="(?i)(?:Spotify)"] → 5
@@ -252,23 +308,27 @@ for_window [class="zoom"]                               floating enable
 popup_during_fullscreen smart
 force_display_urgency_hint 1000 ms
 focus_on_window_activation urgent
+workspace_auto_back_and_forth yes
 
 
 ############    status bar settings   ############
 bar {
     font pango:Fira Code Retina, FontAwesome 12
+    i3bar_command i3bar --transparency
     position bottom
     mode hide
     modifier $Mod
     tray_output none
     status_command /usr/bin/i3status-rs ./.config/i3/status.toml
     colors {
-        separator #666666
+        separator #2e3440
         background #2e3440
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        statusline #eceff4
+        focused_workspace   #a3be8c #a3be8c #2e3440
+        active_workspace    #a3be8c #2e3440 #a3be8c
+        inactive_workspace  #4c566a #4c566a #eceff4
+        urgent_workspace    #bf616a #bf616a #2e3440
     }
+    workspace_buttons yes
+    strip_workspace_numbers yes
 }
