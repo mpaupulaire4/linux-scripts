@@ -417,6 +417,10 @@
    msg_urgency = critical
    fullscreen = show
 
+[bwmenu_no_history]
+   appname = "bwmenu"
+   history_ignore = yes
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh

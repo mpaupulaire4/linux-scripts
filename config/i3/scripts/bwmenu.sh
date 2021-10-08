@@ -246,21 +246,20 @@ show_all_copy() {
     show_full_items
   else
 
-    id=$(echo "$1" | jq -r ".[0].id")
-
-    if totp=$(bw --session "$BW_HASH" get totp "$id"); then
-      $HOME/.config/i3/scripts/copy_notif.sh \
-        "$totp" \
-        "TOTP" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_totp -t 30000 &
-    fi
+    $HOME/.config/i3/scripts/copy_notif.sh \
+      "$(echo "$1" | jq -r '.[0].login.username')" \
+      "Username" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_username -t 30000 &
 
     CLEAR=$CLEAR $HOME/.config/i3/scripts/copy_notif.sh \
       "$(echo "$1" | jq -r '.[0].login.password')" \
       "Password" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_password -t 30000 &
 
-    $HOME/.config/i3/scripts/copy_notif.sh \
-      "$(echo "$1" | jq -r '.[0].login.username')" \
-      "Username" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_username -t 30000 &
+    id=$(echo "$1" | jq -r ".[0].id")
+    if totp=$(bw --session "$BW_HASH" get totp "$id"); then
+      $HOME/.config/i3/scripts/copy_notif.sh \
+        "$totp" \
+        "TOTP" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_totp -t 30000 &
+    fi
   fi
 }
 

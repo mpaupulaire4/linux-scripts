@@ -80,8 +80,10 @@ bindsym $Mod+slash        exec --no-startup-id rofi -show combi
 # bindsym $Mod+f          exec --no-startup-id thunar
 bindsym $Mod+Return       exec --no-startup-id kitty
 
-# suspend script
-# bindsym $Mod+Esc          exec --no-startup-id systemctl suspend
+# Notifications script
+bindsym $Mod+Escape       exec --no-startup-id dunstctl close
+bindsym $Mod+n            exec --no-startup-id dunstctl action
+bindsym $Mod+Shift+n      exec --no-startup-id dunstctl history-pop
 
 # screenshot
 # bindsym $Mod+Shift+s exec --no-startup-id flameshot gui
