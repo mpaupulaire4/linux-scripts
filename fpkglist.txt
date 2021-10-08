@@ -1,6 +1,7 @@
 breezex-cursor-theme
 docker-compose-bin
 lightdm-webkit-theme-aether
+nerd-fonts-fira-code
 nordic-darker-theme
 nvm
 paper-icon-theme

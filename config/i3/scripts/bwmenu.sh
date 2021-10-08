@@ -18,12 +18,9 @@ ITEMS=
 # Stores which command will be used to emulate keyboard type
 AUTOTYPE_MODE=
 
-# Stores which command will be used to deal with clipboards
-CLIPBOARD_MODE=
-
 # Specify what happens when pressing Enter on an item.
-# Defaults to copy_password, can be changed to (auto_type all) or (auto_type password)
-ENTER_CMD=copy_password
+# Defaults to show_all_copy, can be changed to (auto_type all) or (auto_type password)
+ENTER_CMD=show_all_copy
 
 # Keyboard shortcuts
 MODIFIER="Super"
@@ -33,9 +30,9 @@ KB_NAMESEARCH="$MODIFIER+n"
 KB_FOLDERSELECT="$MODIFIER+f"
 KB_TOTPCOPY="$MODIFIER+c"
 KB_LOCK="$MODIFIER+L"
-KB_TYPEALL="$MODIFIER+a"
-KB_TYPEUSER="$MODIFIER+Shift+Return"
-KB_TYPEPASS="$MODIFIER+Return"
+KB_TYPEALL="$MODIFIER+Return"
+KB_TYPEUSER="$MODIFIER+T"
+KB_TYPEPASS="$MODIFIER+t"
 
 # Item type classification
 TYPE_LOGIN=1
@@ -242,6 +239,32 @@ on_rofi_exit() {
 }
 
 # Auto type using xdotool/ydotool
+# $1: item array
+show_all_copy() {
+  if not_unique "$1"; then
+    ITEMS="$1"
+    show_full_items
+  else
+
+    id=$(echo "$1" | jq -r ".[0].id")
+
+    if totp=$(bw --session "$BW_HASH" get totp "$id"); then
+      $HOME/.config/i3/scripts/copy_notif.sh \
+        "$totp" \
+        "TOTP" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_totp -t 30000 &
+    fi
+
+    CLEAR=$CLEAR $HOME/.config/i3/scripts/copy_notif.sh \
+      "$(echo "$1" | jq -r '.[0].login.password')" \
+      "Password" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_password -t 30000 &
+
+    $HOME/.config/i3/scripts/copy_notif.sh \
+      "$(echo "$1" | jq -r '.[0].login.username')" \
+      "Username" "Click to copy" -a bwmenu -h string:x-dunst-stack-tag:bw_username -t 30000 &
+  fi
+}
+
+# Auto type using xdotool/ydotool
 # $1: what to type; all, username, password
 # $2: item array
 auto_type() {
@@ -259,11 +282,9 @@ auto_type() {
         ;;
       username)
         type_word "$(echo "$2" | jq -r '.[0].login.username')"
-        copy_password "$2"
         ;;
       password)
         type_word "$(echo "$2" | jq -r '.[0].login.password')"
-        copy_totp "$2"
         ;;
     esac
   fi
@@ -289,91 +310,6 @@ type_tab() {
   "${AUTOTYPE_MODE[@]}" key Tab
 }
 
-
-# Set $CLIPBOARD_MODE to a command that will put stdin into the clipboard.
-select_copy_command() {
-  if [[ -z "$CLIPBOARD_MODE" ]]; then
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-      hash wl-copy 2>/dev/null && CLIPBOARD_MODE=wayland
-    elif hash xclip 2>/dev/null; then
-      CLIPBOARD_MODE=xclip
-    elif hash xsel 2>/dev/null; then
-      CLIPBOARD_MODE=xsel
-    fi
-    [ -z "$CLIPBOARD_MODE" ] && exit_error 1 "No clipboard command found. Please install either xclip, xsel, or wl-clipboard."
-  fi
-}
-
-clipboard-set() {
-  clipboard-${CLIPBOARD_MODE}-set
-}
-
-clipboard-get() {
-  clipboard-${CLIPBOARD_MODE}-get
-}
-
-clipboard-clear() {
-  clipboard-${CLIPBOARD_MODE}-clear
-}
-
-clipboard-xclip-set() {
-    xclip -selection clipboard -r
-}
-
-clipboard-xclip-get() {
-    xclip -selection clipboard -o
-}
-
-clipboard-xclip-clear() {
-    echo -n "" | xclip -selection clipboard -r
-}
-
-clipboard-xsel-set() {
-  xsel --clipboard --input
-}
-
-clipboard-xsel-get() {
-  xsel --clipboard
-}
-
-clipboard-xsel-clear() {
-  xsel --clipboard --delete
-}
-
-clipboard-wayland-set() {
-  wl-copy
-}
-
-clipboard-wayland-get() {
-  wl-paste
-}
-
-clipboard-wayland-clear() {
-  wl-copy --clear
-}
-
-# Copy the password
-# copy to clipboard and give the user feedback that the password is copied
-# $1: json array of items
-copy_password() {
-  if not_unique "$1"; then
-    ITEMS="$1"
-    show_full_items
-  else
-    pass="$(echo "$1" | jq -r '.[0].login.password')"
-
-    show_copy_notification "$(echo "$1" | jq -r '.[0]')"
-    echo -n "$pass" | clipboard-set
-
-    if [[ $CLEAR -gt 0 ]]; then
-      sleep "$CLEAR"
-      if [[ "$(clipboard-get)" == "$pass" ]]; then
-        clipboard-clear
-      fi
-    fi
-  fi
-}
-
 # Copy the TOTP
 # $1: item array
 copy_totp() {
@@ -383,41 +319,17 @@ copy_totp() {
   else
     id=$(echo "$1" | jq -r ".[0].id")
 
-    if ! totp=$(bw --session "$BW_HASH" get totp "$id"); then
-      exit_error 1 "$totp"
+    if totp=$(bw --session "$BW_HASH" get totp "$id"); then
+      POST='true' $HOME/.config/i3/scripts/copy_notif.sh \
+        "$totp" \
+        "TOTP Coppied" -bwmenu
     fi
-
-    echo -n "$totp" | clipboard-set
-    notify-send "TOTP Copied"
   fi
 }
 
 # Lock the vault by purging the key used to store the session hash
 lock_vault() {
   keyctl purge user bw_session &>/dev/null
-}
-
-# Show notification about the password being copied.
-# $1: json item
-show_copy_notification() {
-  local title
-  local body=""
-  local extra_options=()
-
-  title="<b>$(echo "$1" | jq -r '.name')</b> copied"
-
-  if [[ $SHOW_PASSWORD == "yes" ]]; then
-    pass=$(echo "$1" | jq -r '.login.password')
-    body="${pass:0:4}****"
-  fi
-
-  if [[ $CLEAR -gt 0 ]]; then
-    body="$body<br>Will be cleared in ${CLEAR} seconds."
-    # Keep notification visible while the clipboard contents are active.
-    extra_options+=("-t" "$((CLEAR * 1000))")
-  fi
-  # not sure if icon will be present everywhere, /usr/share/icons is default icon location
-  notify-send "$title" "$body" "${extra_options[@]}" -i /usr/share/icons/hicolor/64x64/apps/bitwarden.png
 }
 
 parse_cli_arguments() {
