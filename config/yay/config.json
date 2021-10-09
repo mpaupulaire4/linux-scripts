@@ -11,7 +11,7 @@
 	"redownload": "no",
 	"rebuild": "no",
 	"answerclean": "yes",
-	"answerdiff": "no",
+	"answerdiff": "n",
 	"answeredit": "",
 	"answerupgrade": "",
 	"gitbin": "git",

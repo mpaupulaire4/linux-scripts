@@ -41,3 +41,9 @@ function create_links {
     clean_link "$filename"
   done
 }
+
+function arraydiff() {
+  awk 'BEGIN{RS=ORS=" "}
+       {NR==FNR?a[$0]++:a[$0]--}
+       END{for(k in a)if(a[k])print k}' <(echo -n "${!1}") <(echo -n "${!2}")
+}

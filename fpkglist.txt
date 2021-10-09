@@ -9,7 +9,6 @@ picom-ibhagwan-git
 sequeler-git
 slack-desktop
 tlpui
-ttf-font-awesome-4
 vscodium-bin
 yay
 zoom
