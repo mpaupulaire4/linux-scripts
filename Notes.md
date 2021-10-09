@@ -2,10 +2,8 @@
 ## TODO
 - Kitty (Terminal)
 - Ranger (file explorer)
-- Firefox
 - Rofi (run menu thing)
 - ZSH (get rc squared away. ohmyzsh or custom config)
-- Configure Dunst (Notifications)
 
 ## From Old Setup File
 ### Setting up QMK
