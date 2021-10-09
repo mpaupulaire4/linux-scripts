@@ -70,9 +70,11 @@ if yorn 'Install foreign pkgs from fpkglist?'; then
 fi
 
 if yorn 'Create pkg hooks?'; then
-  source ./link_hook.sh
-fi
+  sudo mkdir -p /etc/pacman.d/hooks/
+  sudo cp -i $MCONF/pkglists.hook /etc/pacman.d/hooks/
 
-if yorn 'Link Wallpapers?'; then
-  create_link $MCONF/walls $HOME/Pictures/walls
+  sudo nano /etc/pacman.conf
+
+  create_link "$MCONF/pkglist.txt" "/etc/pkglist.txt"
+  create_link "$MCONF/fpkglist.txt" "/etc/fpkglist.txt"
 fi

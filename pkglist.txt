@@ -18,7 +18,6 @@ i3status-rust
 intel-ucode
 iwd
 jq
-keychain
 kitty
 light-locker
 lightdm

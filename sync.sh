@@ -12,6 +12,12 @@ create_links "$MCONF/config" "$HOME/.config"
 echo "Link Bin"
 mkdir -p "$HOME/.local/bin"
 create_links "$MCONF/bin" "$HOME/.local/bin"
+echo "Link Sytemd User Services"
+mkdir -p "$HOME/systemd/user"
+create_links "$MCONF/systemd_user" "$HOME/systemd/user"
+echo 'Link Wallpapers?'
+mkdir -p $HOME/Pictures
+create_link $MCONF/walls $HOME/Pictures/walls
 
 echo "install packages"
 FPKGS=(`cat "$MCONF/fpkglist.txt"`)

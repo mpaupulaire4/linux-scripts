@@ -1,6 +1,5 @@
 # Notes
 ## TODO
-- Configure i3 (Window Manager)
 - Kitty (Terminal)
 - Ranger (file explorer)
 - Firefox
