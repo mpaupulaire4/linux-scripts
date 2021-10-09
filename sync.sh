@@ -14,8 +14,12 @@ mkdir -p "$HOME/.local/bin"
 create_links "$MCONF/bin" "$HOME/.local/bin"
 
 echo "install packages"
-readarray -t FPKGS < ./fpkglist.txt
-readarray -t PKGS < ./pkglist.txt
+FPKGS=(`cat "$MCONF/fpkglist.txt"`)
+PKGS=(`cat "$MCONF/pkglist.txt"`)
+CFPKGS=(`pacman -Qqem`)
+needed=($(arraydiff FPKGS[@] CFPKGS[@]))
 
 yay -S --needed "${PKGS[@]}"
-yay -S --needed "${FPKGS[@]}"
+if [ ${#needed[@]} != 0 ]; then
+  yay -S --needed "${needed[@]}"
+fi

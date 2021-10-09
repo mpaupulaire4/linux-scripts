@@ -33,9 +33,18 @@ function clean_link {
 
 
 function create_links {
+
+  TMP_FILE="$MCONF/filelist.tmp"
+  touch $TMP_FILE
+
   find $1 -maxdepth 1 -mindepth 1 -print0 | while IFS= read -d '' filename; do
-    create_link "$filename" "$2/$(basename $filename)"
+    echo "$filename" >> $TMP_FILE
   done
+  lines=(`cat "$TMP_FILE"`)
+  for i in "${lines[@]}"; do
+    create_link "$i" "$2/$(basename $i)"
+  done
+  rm -rf $TMP_FILE
 
   find $2 -maxdepth 1 -type l -print0 | while IFS= read -r -d '' filename; do
     clean_link "$filename"
