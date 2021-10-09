@@ -26,8 +26,8 @@ function create_link {
 
 function clean_link {
   if [[ -L "$1" && ! -e "$1" ]]; then
-    echo "$1 cleaned"
     unlink $1
+    echo "$1 cleaned"
   fi
 }
 

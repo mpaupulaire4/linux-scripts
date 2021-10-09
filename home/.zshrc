@@ -344,7 +344,7 @@ source /usr/share/nvm/init-nvm.sh
 source $HOME/.screenlayout/default.sh
 source $HOME/.zsh.env.local
 
-eval $(keychain --eval --quiet --noask --agents ssh,gpg id_ed25519 id_rsa)
+# eval $(keychain --eval --quiet --noask --agents ssh,gpg id_ed25519 id_rsa)
 
 load-nvmrc() {
   local node_version="$(nvm version)"
