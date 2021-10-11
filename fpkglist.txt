@@ -8,6 +8,7 @@ paper-icon-theme
 picom-ibhagwan-git
 sequeler-git
 slack-desktop
+syncthing-gtk
 tlpui
 vscodium-bin
 yay
