@@ -1,6 +1,5 @@
 # Notes
 ## TODO
-- Kitty (Terminal)
 - Ranger (file explorer)
 - Rofi (run menu thing)
 - ZSH (get rc squared away. ohmyzsh or custom config)
