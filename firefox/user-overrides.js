@@ -14,6 +14,11 @@ user_pref("privacy.cpd.cookies", true); // 2803 Ctrl-Shift-Del
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
 user_pref("signon.rememberSignons", false);
 
+/* 1702: set behaviour on "+ Tab" button to display container menu on left click [FF74+]
+ * [NOTE] The menu is always shown on long press and right click
+ * [SETTING] General>Tabs>Enable Container Tabs>Settings>Select a container for each new tab ***/
+user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
+
 
 
 /*** [SECTION 9000]: PERSONAL

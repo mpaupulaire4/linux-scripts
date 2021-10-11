@@ -7,11 +7,8 @@ set -e
 PROFILE_PATH=$1
 LINKS=(
   'extensions'
-  'permissions.sqlite'
-  'search.json.mozlz4'
   'user-overrides.js'
   'user.js'
-  'xulstore.json'
 )
 
 if  [ -z ${PROFILE_PATH} ]; then
