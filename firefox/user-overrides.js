@@ -9,6 +9,13 @@ user_pref("privacy.cpd.cookies", true); // 2803 Ctrl-Shift-Del
 // user_pref("privacy.cpd.offlineApps", true); // 2803 Ctrl-Shift-Del optional
 
 
+/* 5003: disable saving passwords
+ * [NOTE] This does not clear any passwords already saved
+ * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
+user_pref("signon.rememberSignons", false);
+
+
+
 /*** [SECTION 9000]: PERSONAL
    Non-project related but useful. If any interest you, add them to your overrides
 ***/
