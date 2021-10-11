@@ -38,6 +38,7 @@ reflector
 rofi
 sof-firmware
 sudo
+syncthing
 systemd-resolvconf
 tlp
 ttf-fira-code
