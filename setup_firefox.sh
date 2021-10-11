@@ -5,6 +5,14 @@ source ./utils.sh
 set -e
 
 PROFILE_PATH=$1
+LINKS=(
+  'extensions'
+  'permissions.sqlite'
+  'search.json.mozlz4'
+  'user-overrides.js'
+  'user.js'
+  'xulstore.json'
+)
 
 if  [ -z ${PROFILE_PATH} ]; then
   echo "Once in the profile manager create a new profile."
@@ -16,8 +24,8 @@ if  [ -z ${PROFILE_PATH} ]; then
   exit 0
 fi
 
-# echo $PROFILE_PATH
-rm -rI $PROFILE_PATH/*
 
-create_links $MCONF/firefox $PROFILE_PATH
-firefox -no-remote --profile $PROFILE_PATH
+
+for i in "${LINKS[@]}"; do
+  create_link $MCONF/firefox/$i $PROFILE_PATH/$i
+done
