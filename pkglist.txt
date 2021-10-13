@@ -25,6 +25,8 @@ lightdm-webkit2-greeter
 linux
 linux-firmware
 lvm2
+man-db
+man-pages
 nano
 openssh
 openvpn
