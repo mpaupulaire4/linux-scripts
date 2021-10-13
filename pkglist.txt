@@ -42,6 +42,8 @@ syncthing
 systemd-resolvconf
 tlp
 ttf-fira-code
+udiskie
+udisks2
 unzip
 x11-ssh-askpass
 xclip
