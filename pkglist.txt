@@ -43,12 +43,14 @@ systemd-resolvconf
 tlp
 ttf-fira-code
 unzip
+x11-ssh-askpass
 xclip
 xdg-user-dirs
 xdotool
 xf86-video-intel
 xorg-server
 xorg-xrandr
+xorg-xrdb
 zip
 zsh
 zsh-completions
