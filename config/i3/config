@@ -17,8 +17,15 @@ set $right    L
 
 set $comm     J
 set $home     K
-set $code     l
-set $docs     p
+set $code     L
+set $docs     P
+
+set $Prev      U
+set $Next      O
+set $Paren     Y
+set $Child     H
+
+
 
 # gaps
 gaps inner 12
@@ -143,9 +150,12 @@ mode "$mode_workspace" {
 # switch to next or previous workspace
 bindsym $Mod+Home           focus output left
 bindsym $Mod+End            focus output right
+
+bindsym $Mod+$Prev           focus output left
+bindsym $Mod+$Next           focus output right
 # move to next or previous workspace
-bindsym $Mod+Shift+Home     move to output left;  focus output left
-bindsym $Mod+Shift+End      move to output right; focus output right
+bindsym $Mod+Shift+$Prev     move to output left;  focus output left
+bindsym $Mod+Shift+$Next     move to output right; focus output right
 
 # move focused container to workspace
 # bindsym $Mod+Shift+1 move container to workspace 1; workspace 1
@@ -198,6 +208,9 @@ bindsym $Mod+Shift+$right   move right 20px
 
 bindsym $Mod+Prior          focus parent
 bindsym $Mod+Next           focus child
+
+bindsym $Mod+$Paren         focus parent
+bindsym $Mod+$Child         focus child
 
 # resize
 set $mode_resize Resize: [Up/Down]Vertical [Left/Right]Horizontal

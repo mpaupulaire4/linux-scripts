@@ -2,11 +2,16 @@ theme = "nord-dark"
 icons = "awesome"
 
 [[block]]
+block = "bluetooth"
+mac = "4C:87:5D:7K:D5:C4"
+format = "Nightshade {percentage}"
+format_unavailable = "Nightshade x"
+
+[[block]]
 block = "memory"
 display_type = "memory"
 format_mem = "{mem_used_percents}"
 format_swap = "{swap_used_percents}"
-icons_format = "{icon}"
 
 [[block]]
 block = "cpu"
