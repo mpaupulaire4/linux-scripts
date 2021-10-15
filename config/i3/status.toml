@@ -3,9 +3,8 @@ icons = "awesome"
 
 [[block]]
 block = "bluetooth"
-mac = "4C:87:5D:7K:D5:C4"
-format = "Nightshade {percentage}"
-format_unavailable = "Nightshade x"
+mac = "4C:87:5D:7D:D5:C4"
+format = "Nightshade"
 
 [[block]]
 block = "memory"

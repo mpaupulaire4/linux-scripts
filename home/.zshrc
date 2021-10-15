@@ -340,12 +340,8 @@ fi
 export NVM_DIR="$HOME/.nvm"
 export NPM_TOKEN="$(grep -s //registry.npmjs.org/:_authToken= $HOME/.npmrc | cut -c34- )"
 export PATH="$HOME/.local/bin:$PATH"
-# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 source /usr/share/nvm/init-nvm.sh
-source $HOME/.screenlayout/default.sh
 source $HOME/.zsh.env.local
-
-# eval $(keychain --eval --quiet --noask --agents ssh,gpg id_ed25519 id_rsa)
 
 load-nvmrc() {
   local node_version="$(nvm version)"

@@ -2,15 +2,15 @@
 	name = Michel Pupulaire
 	email = mpaupulaire4@gmail.com
 [core]
-	editor = code --wait
+	editor = codium --wait
 [diff]
 	tool = vscode
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = codium --wait --diff $LOCAL $REMOTE
 [merge]
 	tool = vscode
 [mergetool "vscode"]
-	cmd = code --wait $MERGED
+	cmd = codium --wait $MERGED
 [pull]
 	rebase = true
 [init]
