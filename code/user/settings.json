@@ -83,6 +83,6 @@
   "extensions.autoUpdate": false,
   "npm.fetchOnlinePackageInfo": false,
   "terminal.integrated.fontFamily": "Fira Code Retina",
-  "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
+  // "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
   "svelte.enable-ts-plugin": true
 }
