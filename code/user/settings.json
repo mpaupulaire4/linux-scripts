@@ -58,7 +58,6 @@
   "gitlens.statusBar.enabled": false,
   "githubPullRequests.fileListLayout": "tree",
   "editor.detectIndentation": false,
-  // "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
   "terminal.integrated.tabs.enabled": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
