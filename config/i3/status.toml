@@ -3,6 +3,11 @@ icons = "awesome"
 
 [[block]]
 block = "bluetooth"
+mac = "DC:0D:11:A1:6A:99"
+format = "Corne"
+
+[[block]]
+block = "bluetooth"
 mac = "4C:87:5D:7D:D5:C4"
 format = "Nightshade"
 
