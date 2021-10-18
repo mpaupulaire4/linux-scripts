@@ -4,7 +4,7 @@ icons = "awesome"
 [[block]]
 block = "bluetooth"
 mac = "DC:0D:11:A1:6A:99"
-format = "Corne"
+format = "Corne {percentage}"
 
 [[block]]
 block = "bluetooth"
