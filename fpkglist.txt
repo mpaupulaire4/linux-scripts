@@ -4,6 +4,7 @@ lightdm-webkit-theme-aether
 nerd-fonts-fira-code
 nordic-darker-theme
 nvm
+openvpn-update-systemd-resolved
 paper-icon-theme
 picom-ibhagwan-git
 sequeler-git
