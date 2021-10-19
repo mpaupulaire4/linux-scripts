@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Filename:      /etc/skel/.zshrc
 # Purpose:       config file for zsh (z shell)
 # Authors:       (c) grml-team (grml.org)
@@ -337,6 +344,7 @@ fi
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 
 ## END OF FILE #################################################################
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export NVM_DIR="$HOME/.nvm"
 export NPM_TOKEN="$(grep -s //registry.npmjs.org/:_authToken= $HOME/.npmrc | cut -c34- )"
 export PATH="$HOME/.local/bin:$PATH"
@@ -362,3 +370,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -11,6 +11,8 @@ sequeler-git
 slack-desktop
 syncthing-gtk
 tlpui
+ttf-meslo-nerd-font-powerlevel10k
 vscodium-bin
 yay
 zoom
+zsh-theme-powerlevel10k-git
