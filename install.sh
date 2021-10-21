@@ -47,9 +47,9 @@ if yorn 'Install LightDM?'; then
   yay -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether light-locker i3-gaps --needed
   sudo systemctl enable lightdm.service
   echo 'Change the greeter-session to the appropriate greeter'
-  sudo nano /etc/lightdm/lightdm.conf
+  sudo micro /etc/lightdm/lightdm.conf
   echo 'Change the greeter-session to the appropriate greeter'
-  sudo nano /etc/lightdm/lightdm-webkit2-greeter.conf
+  sudo micro /etc/lightdm/lightdm-webkit2-greeter.conf
 fi
 
 if yorn 'Install and enable power management?'; then
@@ -73,7 +73,7 @@ if yorn 'Create pkg hooks?'; then
   sudo mkdir -p /etc/pacman.d/hooks/
   sudo cp -i $MCONF/pkglists.hook /etc/pacman.d/hooks/
 
-  sudo nano /etc/pacman.conf
+  sudo micro /etc/pacman.conf
 
   create_link "$MCONF/pkglist.txt" "/etc/pkglist.txt"
   create_link "$MCONF/fpkglist.txt" "/etc/fpkglist.txt"

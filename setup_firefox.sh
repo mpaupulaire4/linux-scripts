@@ -9,6 +9,8 @@ LINKS=(
   'extensions'
   'user-overrides.js'
   'user.js'
+  'prefsCleaaner.sh'
+  'updater.sh'
 )
 
 if  [ -z ${PROFILE_PATH} ]; then

@@ -8,7 +8,7 @@ echo 'Updating'
 pacman -Syu
 
 echo 'Installing Some Basic Packages'
-pacman -S cryptsetup lvm2 efibootmgr zsh nano iwd git sudo xdg-user-dirs grml-zsh-config intel-ucode dhcpcd --needed
+pacman -S cryptsetup lvm2 efibootmgr zsh micro iwd git sudo xdg-user-dirs grml-zsh-config intel-ucode dhcpcd --needed
 
 echo 'Create a password for the root user'
 passwd
@@ -26,6 +26,6 @@ systemctl enable dhcpcd.service
 systemctl enable iwd.service
 
 echo 'Edit sudoers file'
-EDITOR=nano visudo
+EDITOR=micro visudo
 
 echo 'FINISHED BASIC SETUP'

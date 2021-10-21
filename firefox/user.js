@@ -1,7 +1,7 @@
 /******
 * name: arkenfox user.js
-* date: 11 October 2021
-* version 92
+* date: 12 October 2021
+* version 93
 * url: https://github.com/arkenfox/user.js
 * license: MIT: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
 
@@ -1272,7 +1272,6 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
    // user_pref("security.ssl3.rsa_aes_256_gcm_sha384", false); // no PFS
    // user_pref("security.ssl3.rsa_aes_128_sha", false); // no PFS
    // user_pref("security.ssl3.rsa_aes_256_sha", false); // no PFS
-   // user_pref("security.ssl3.rsa_des_ede3_sha", false); // 3DES
 /* 7004: control TLS versions
  * [WHY] Passive fingerprinting. Downgrades are still possible: behind user interaction ***/
    // user_pref("security.tls.version.min", 3); // [DEFAULT: 3]
@@ -1406,6 +1405,14 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", 
    [1] https://github.com/arkenfox/user.js/issues/123
 ***/
 user_pref("_user.js.parrot", "9999 syntax error: the parrot's shuffled off 'is mortal coil!");
+/* ESR91.x still uses all the following prefs
+// [NOTE] replace the * with a slash in the line above to re-enable them
+// FF93
+// 7003: disable non-modern cipher suites
+   // [-] https://bugzilla.mozilla.org/1724072
+   // user_pref("security.ssl3.rsa_des_ede3_sha", false); // 3DES
+// ***/
+
 /* ESR78.x still uses all the following prefs
 // [NOTE] replace the * with a slash in the line above to re-enable them
 // FF79
@@ -1473,17 +1480,40 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 user_pref("_user.js.parrot", "overrides section syntax error");
 
 /* override recipe: keep some cookies + other site data on close ***/
-user_pref("network.cookie.lifetimePolicy", 2); // 2703
-user_pref("privacy.clearOnShutdown.cookies", false); // 2802
+// user_pref("network.cookie.lifetimePolicy", 2); // 2703
+// user_pref("privacy.clearOnShutdown.cookies", false); // 2802
 // user_pref("privacy.clearOnShutdown.offlineApps", true); // 2802 optional
-user_pref("privacy.cpd.cookies", true); // 2803 Ctrl-Shift-Del
+// user_pref("privacy.cpd.cookies", true); // 2803 Ctrl-Shift-Del
 // user_pref("privacy.cpd.offlineApps", true); // 2803 Ctrl-Shift-Del optional
+
+
 
 
 /* 5003: disable saving passwords
  * [NOTE] This does not clear any passwords already saved
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
-user_pref("signon.rememberSignons", false);
+  user_pref("signon.rememberSignons", false);
+/* 5007: exclude "Undo Closed Tabs" in Session Restore ***/
+  user_pref("browser.sessionstore.max_tabs_undo", 0);
+/* 5008: disable resuming session from crash ***/
+  user_pref("browser.sessionstore.resume_from_crash", false);
+/* 5009: disable "open with" in download dialog [FF50+]
+ * Application data isolation [1]
+ * [1] https://bugzilla.mozilla.org/1281959 ***/
+   // user_pref("browser.download.forbid_open_with", true);
+/* 5010: disable location bar suggestion types
+ * [SETTING] Privacy & Security>Address Bar>When using the address bar, suggest ***/
+  user_pref("browser.urlbar.suggest.history", false);
+  user_pref("browser.urlbar.suggest.bookmark", false);
+  // user_pref("browser.urlbar.suggest.openpage", false);
+  user_pref("browser.urlbar.suggest.topsites", false); // [FF78+]
+
+
+/* 1702: set behaviour on "+ Tab" button to display container menu on left click [FF74+]
+ * [NOTE] The menu is always shown on long press and right click
+ * [SETTING] General>Tabs>Enable Container Tabs>Settings>Select a container for each new tab ***/
+user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true);
+
 
 
 

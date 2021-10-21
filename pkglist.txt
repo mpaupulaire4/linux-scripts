@@ -27,6 +27,7 @@ linux-firmware
 lvm2
 man-db
 man-pages
+micro
 nano
 openssh
 openvpn

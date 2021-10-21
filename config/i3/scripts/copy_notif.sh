@@ -71,12 +71,12 @@ select_copy_command
 if "$POST" == "true"; then
   ACTION="default"
 else
-  ACTION=$(dunstify "${NOTIF_OPTIONS[@]}" -A "default,Copy")
+  ACTION="$(dunstify "${NOTIF_OPTIONS[@]}" -A "default,Copy")"
 fi
 
 if [[ $ACTION == "default" ]]; then
   echo -n "$TEXT" | clipboard-set
-  if $POST == "true"; then
+  if "$POST" == "true"; then
     dunstify "${NOTIF_OPTIONS[@]}"
   fi
   if [[ $CLEAR -gt 0 ]]; then

@@ -319,9 +319,9 @@ copy_totp() {
     id=$(echo "$1" | jq -r ".[0].id")
 
     if totp=$(bw --session "$BW_HASH" get totp "$id"); then
-      POST='true' $HOME/.config/i3/scripts/copy_notif.sh \
+      POST="true" $HOME/.config/i3/scripts/copy_notif.sh \
         "$totp" \
-        "TOTP Coppied" -bwmenu
+        "TOTP Coppied" -a bwmenu
     fi
   fi
 }
