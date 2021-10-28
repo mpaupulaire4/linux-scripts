@@ -31,6 +31,28 @@
     # screen width minus the width defined in within the geometry option.
     geometry = "500x5-30-20"
 
+    # The width of the notification window in pixels. This can be a single number to specify a constant width or two numbers for the minimum and maximum width. The notification will expand from the minimum width as neccesary.
+
+    # Examples: width = 300 # constant width of 300 width = (0, 300) # width between 0 and 300
+    width = (500, 700)
+
+    # The maximum height of a single notification.
+    # height
+
+
+    # The number of notifications that can appear at one time. When this limit is reached any additional notifications will be queued and displayed when the currently displayed ones either time out or are manually dismissed. The value 0 means no limit. If indicate_hidden is true, then the specified limit is reduced by 1 and the last notification is a message informing how many hidden notifications are waiting to be displayed. See the indicate_hidden entry for more information.
+    # default: 0
+    notification_limit = 6
+
+    # The origin of the notification window on the screen. It can then be moved with offset. Origin can be one of: top-left top-center top-right bottom-left bottom-center bottom-right left-center center right-center
+    # default: top-right
+    origin = bottom-right
+
+    # Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by origin. Both values should always be positive or zero.
+    # format: (horizontal, vertical)
+    # Examples: origin = top-right offset = 10x300 # a margin of 10 pixels from the right and 300 pixels from the top
+    offset = (30, 20)
+
     # Turn on the progess bar
     progress_bar = true
 
@@ -48,8 +70,8 @@
     progress_bar_max_width = 500
 
 
-    # Show how many messages are currently hidden (because of geometry).
-    indicate_hidden = yes
+    # Show how many messages are currently hidden.
+    indicate_hidden = true
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -92,7 +114,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#393e48"
 
     # Sort messages by urgency.
     sort = yes
