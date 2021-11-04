@@ -14,7 +14,6 @@ if yorn 'Install YAY?'; then
   cd ..
   rm -rf yay
 
-  yay
   yay -Y --gendb
   yay -S yay
 fi
@@ -57,24 +56,6 @@ if yorn 'Install and enable power management?'; then
   sudo systemctl enable tlp
 fi
 
-if yorn 'Sync Dirs?'; then
-  source ./sync.sh
-fi
-
 if yorn 'Install pkgs from pkglist?'; then
-  sudo pacman -S --needed - < pkglist.txt
-fi
-
-if yorn 'Install foreign pkgs from fpkglist?'; then
-  yay -S --needed - < fpkglist.txt
-fi
-
-if yorn 'Create pkg hooks?'; then
-  sudo mkdir -p /etc/pacman.d/hooks/
-  sudo cp -i $MCONF/pkglists.hook /etc/pacman.d/hooks/
-
-  sudo micro /etc/pacman.conf
-
-  create_link "$MCONF/pkglist.txt" "/etc/pkglist.txt"
-  create_link "$MCONF/fpkglist.txt" "/etc/fpkglist.txt"
+  sudo pacman -S --needed - < .pkgs
 fi

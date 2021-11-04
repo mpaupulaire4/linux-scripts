@@ -6,16 +6,12 @@ user_pref("_user.js.parrot", "overrides section syntax error");
  * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
   user_pref("signon.rememberSignons", false);
 /* 5007: exclude "Undo Closed Tabs" in Session Restore ***/
-  user_pref("browser.sessionstore.max_tabs_undo", 0);
+  // user_pref("browser.sessionstore.max_tabs_undo", 0);
 /* 5008: disable resuming session from crash ***/
   user_pref("browser.sessionstore.resume_from_crash", false);
-/* 5009: disable "open with" in download dialog [FF50+]
- * Application data isolation [1]
- * [1] https://bugzilla.mozilla.org/1281959 ***/
-   // user_pref("browser.download.forbid_open_with", true);
 /* 5010: disable location bar suggestion types
  * [SETTING] Privacy & Security>Address Bar>When using the address bar, suggest ***/
-  user_pref("browser.urlbar.suggest.history", false);
+  // user_pref("browser.urlbar.suggest.history", false);
   user_pref("browser.urlbar.suggest.bookmark", false);
   // user_pref("browser.urlbar.suggest.openpage", false);
   user_pref("browser.urlbar.suggest.topsites", false); // [FF78+]
