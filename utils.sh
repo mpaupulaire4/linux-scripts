@@ -31,7 +31,7 @@ function copy_link {
     else
       file="$(readlink "$1")"
       unlink $1
-      cp $file $1
+      cp -r $file $1
       dotfiles add $1
     fi
   fi
