@@ -24,6 +24,19 @@ function create_link {
   ln -siv $1 $2
 }
 
+function copy_link {
+  if [[ -L "$1" ]]; then
+    if [[ ! -e "$1" ]]; then
+      unlink $1
+    else
+      file="$(readlink "$1")"
+      unlink $1
+      cp $file $1
+      dotfiles add $1
+    fi
+  fi
+}
+
 function clean_link {
   if [[ -L "$1" && ! -e "$1" ]]; then
     unlink $1

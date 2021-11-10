@@ -1,16 +1,13 @@
 breezex-cursor-theme
-docker-compose-bin
-lightdm-webkit-theme-aether
+ly
 nerd-fonts-fira-code
 nordic-darker-theme
 nvm
-openvpn-update-systemd-resolved
 paper-icon-theme
 picom-ibhagwan-git
 sequeler-git
 slack-desktop
 syncthing-gtk
-tlpui
 ttf-meslo-nerd-font-powerlevel10k
 vscodium-bin
 yay

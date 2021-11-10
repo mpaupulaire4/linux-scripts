@@ -44,7 +44,7 @@ exec_always --no-startup-id feh --no-fehbg --bg-scale --randomize ~/Pictures/wal
 
 # # run once
 exec --no-startup-id picom -b
-exec --no-startup-id light-locker &
+exec --no-startup-id xss-lock -- i3lock -n -e -i Pictures/walls/nord-color-blast.png &
 exec --no-startup-id dunst &
 
 #############         Colors           ##################

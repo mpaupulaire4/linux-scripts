@@ -3,6 +3,10 @@
 set -e
 source ./utils.sh
 
+echo "Settting Up DNS Resolution"
+sudo ln -sf /run/systemd/resolve/stub-resolve.conf /etc/resolve.conf
+touch .pkgignore
+
 echo 'Updating'
 sudo pacman -Syu
 
@@ -42,17 +46,13 @@ if yorn 'Install xorg?'; then
   yay -S xorg-server xf86-video-intel xorg-xrandr --needed
 fi
 
-if yorn 'Install LightDM?'; then
-  yay -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether light-locker i3-gaps --needed
-  sudo systemctl enable lightdm.service
-  echo 'Change the greeter-session to the appropriate greeter'
-  sudo micro /etc/lightdm/lightdm.conf
-  echo 'Change the greeter-session to the appropriate greeter'
-  sudo micro /etc/lightdm/lightdm-webkit2-greeter.conf
+if yorn 'Install Display Manager and Window Manager?'; then
+  yay -S ly i3-gaps i3lock --needed
+  sudo systemctl enable ly.service
 fi
 
 if yorn 'Install and enable power management?'; then
-  yay -S tlp tlpui
+  yay -S tlp
   sudo systemctl enable tlp
 fi
 

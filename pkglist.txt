@@ -5,8 +5,8 @@ bitwarden-cli
 blueman
 bluez
 bluez-utils
-dhcpcd
 docker
+docker-compose
 dunst
 efibootmgr
 feh
@@ -14,14 +14,11 @@ firefox
 git
 grml-zsh-config
 i3-gaps
+i3lock
 i3status-rust
 intel-ucode
-iwd
 jq
 kitty
-light-locker
-lightdm
-lightdm-webkit2-greeter
 linux
 linux-firmware
 lvm2
@@ -29,6 +26,8 @@ man-db
 man-pages
 micro
 nano
+networkmanager
+networkmanager-openvpn
 openssh
 openvpn
 pacmatic
@@ -43,7 +42,6 @@ rofi
 sof-firmware
 sudo
 syncthing
-systemd-resolvconf
 tlp
 ttf-fira-code
 udiskie
@@ -57,6 +55,7 @@ xf86-video-intel
 xorg-server
 xorg-xrandr
 xorg-xrdb
+xss-lock
 zip
 zsh
 zsh-completions

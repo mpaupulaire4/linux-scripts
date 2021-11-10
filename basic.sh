@@ -8,7 +8,7 @@ echo 'Updating'
 pacman -Syu
 
 echo 'Installing Some Basic Packages'
-pacman -S cryptsetup lvm2 efibootmgr zsh micro iwd git sudo xdg-user-dirs grml-zsh-config intel-ucode dhcpcd --needed
+pacman -S cryptsetup lvm2 efibootmgr zsh micro git sudo xdg-user-dirs grml-zsh-config intel-ucode networkmanager --needed
 
 echo 'Create a password for the root user'
 passwd
@@ -20,10 +20,8 @@ echo 'Set User mpaupulaire password'
 passwd mpaupulaire
 
 echo 'Setting Up Internet'
-systemctl enable systemd-networkd.service
 systemctl enable systemd-resolved.service
-systemctl enable dhcpcd.service
-systemctl enable iwd.service
+systemctl enable NetworkManager.service
 
 echo 'Edit sudoers file'
 EDITOR=micro visudo
